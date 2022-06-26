@@ -15,8 +15,8 @@
           */
          public function index(RequestStack $stack): Response
          {
-            dd($stack->getSession()->get('cart'));
-            return $this->render('cart/index.html.twig');
+           $cart=$stack->getSession()->get('cart');          
+           return $this->render('cart/index.html.twig',['cart' => $cart]);
          }
       
          /**
